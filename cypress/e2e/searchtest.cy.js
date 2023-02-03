@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-it('Standard Login', () => {
+it('Google Search Test', () => {
     cy.visit('https://www.google.com/')
 
     cy.get('.jw8mI').scrollTo("bottom")
