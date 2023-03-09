@@ -1,29 +1,30 @@
+import ryanairHomepage from "../../pages/ryanairHomepage.cy.js";
+
 Cypress.Commands.add("selectDeparture", () => {
-    cy.get('#input-button__departure').click()
+    ryanairHomepage.elements.departureButton().click();
     
-    cy.get(':nth-child(2) > :nth-child(1) > .countries__country-inner').click()
+    ryanairHomepage.elements.firstDepartureCountry().click();
     
-    cy.get(':nth-child(1) > .body-l-lg > span').click()
+    ryanairHomepage.elements.firstDepartureCity().click();
 })
 
 Cypress.Commands.add("selectDestination", () => {
-    cy.get(':nth-child(3) > :nth-child(2) > .countries__country-inner').click()
+    ryanairHomepage.elements.firstDestinationCountry().click();
     
-    cy.get('.list__airports-scrollable-container > .ng-star-inserted > .body-l-lg > span').click()
+    ryanairHomepage.elements.firstDestinationCity().click();
 })
 
 Cypress.Commands.add("selectFlexiDate", () => {
-    cy.get('.ng-trigger-datesFromTripTypeChange > .input-button__content > .input-button__input').click()
         
-    cy.get('[data-ref="datepicker-tabs__flexible-dates"] > fsw-datepicker-tab').click()
+    ryanairHomepage.elements.selectFlexi().click()
 
-    cy.get('.carousel-items__content-slider > :nth-child(2)').click()
+    ryanairHomepage.elements.selectSecondMonth().click()
 
-    cy.get('.flexible-dates__days > :nth-child(2)').click()
+    ryanairHomepage.elements.selectSecondDay().click()
 
-    cy.get('.flexible-dates__cta-apply').click()
+    ryanairHomepage.elements.dateApply().click()
 })
 
 Cypress.Commands.add("clickFlightSearch", () => {
-    cy.get('.flight-search-widget__start-search').click()
+    ryanairHomepage.elements.searchButton().click()
 })

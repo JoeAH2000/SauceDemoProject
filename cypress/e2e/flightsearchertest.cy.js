@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import ryanairHomepage from "../pages/ryanairHomepage.cy.js"
 
 describe("Tests for Flight Search", () => {
     beforeEach( () => {
@@ -25,4 +26,3 @@ describe("Tests for Flight Search", () => {
         cy.url().should('eq', 'https://www.ryanair.com/gb/en')
     })
 })
-
